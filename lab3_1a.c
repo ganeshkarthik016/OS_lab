@@ -4,15 +4,18 @@ int lock = 0;
 
 void process(int id) {
 
-    while (lock == 1)
-        ;
+    while (lock == 1);
 
+    //cs
+    
+    
     lock = 1; 
 
     printf("Process %d is in Critical Section\n", id);
     Sleep(1000);
 
     lock = 0;   
+    //end
 
     printf("Process %d is in Remainder Section\n", id);
     Sleep(1000);
